@@ -8,13 +8,14 @@ export class AuthController {
   // pass the authService in the param to use the functions in controller
   constructor(private authService: AuthService) {}
 
-  // make
+  // make sign up route
   @Post('signup')
   //@Body grabs the json object from request body and passes it to controller after that dto holds the body and validate with the AuthDto type
   signup(@Body() dto: AuthDto) {
     return this.authService.signup(dto);
   }
 
+  // make sign in route
   @Post('signin') // make sign in route
   signin(@Body() dto: AuthDto) {
     return this.authService.signin(dto);
